@@ -6,36 +6,34 @@
         
         <style>
         
-        
      body {
             font-size: 14px;
             font-family:'Times New Roman', Times, serif
-            
             }
-       
-        #my_pic{
-    
-            float: left;
-            border: 1px solid rgb(247, 248, 243);
-            margin-left: 100px;
-            margin-left: 6px;
-            margin-bottom: 6px;
 
+        #my_pic{
+            position: relative;
+            float: left;
+            border: 1px solid rgba(233, 235, 226, 0.068);
+            
         }
 
         .name_tag{
-                position: absolute;
-                float: right;
-                border-radius: 6px;
-                top: 190px;
-                left: 380px; 
-                margin-bottom: 10px;             
-                font-family: sans-serif;
+            position: relative;
+            float: left;   
+            letter-spacing: 2px;     
+            margin-left: 20px; 
+            font-family: sans-serif;
     
 
             }
 
-       
+        #all_content{
+            position: relative;
+            float: left;        
+            font-family: sans-serif;
+           
+        }
            
         
         h2 {
@@ -46,8 +44,9 @@
             }
         
         .company_title{
-
+            margin-left: 35px; 
             color:rgb(18, 38, 212)
+            
             
             }
       
@@ -85,7 +84,7 @@
     <p id="mail">re4388@gmail.com</p></div>
     
  
-    
+    <div id="all_content">
     <h2>Summary of Qualifications</h2>
     
     <p>
@@ -171,7 +170,7 @@ by   15% and increases this account y/y growth by 111%.</li>
     <h3>Sep 2011 – Oct 2012</h3>
     <p class="company_title">
         <em>
-         NTU_ND Ph.D. (one year and decided to drop out for job)
+         NTU_ND Ph.D. (one year and decided to go for the Brazil opportunity)
         </em>
     <h3>Sep 2009 – Sep 2011</h3>
     <p class="company_title">
@@ -216,17 +215,17 @@ by   15% and increases this account y/y growth by 111%.</li>
     <li>
         <a href="https://www.khanacademy.org/">Khan Academy</a>
     </li>
-    
    
 </ul>
+</div>
 
 
 
-<img src="https://cdn.stocksnap.io/img-thumbs/960w/H8YLSQZGQK.jpg"" alt="people sit in front of the green">
+
 
     <script>
 
-        <!--below I can change any name I want-->
+       
         var name_node = document.getElementById("resume_name");
             name_node.innerHTML = "Ben Hu"
 
