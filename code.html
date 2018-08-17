@@ -8,16 +8,18 @@
 </head>
 <body>
     <h1>it'a a good game</h1>
-    
+   
     <canvas id="mycanvas"></canvas>
-</body>
+
+<script defer src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
+    <script defer src="jquery-3.3.1.min.js"></script>
 
 
-<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
+<script defer>
+     $("h1").text("It'a good day")
+</script>
 
-<script>
-    
-
+<script defer>
      var programCode = function (processingInstance) {
             with (processingInstance) {
                 size(400, 400);
