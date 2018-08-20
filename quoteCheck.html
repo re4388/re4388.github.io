@@ -3,9 +3,9 @@
 
 <body>
 
-    <h3>Fill in Target price and BOM
+    <h3>Key in "Target price" & "BOM"
         <br> ->
-        <br> Akerman Quotation stepping and the Gross Profit Rate</h3>
+        <br> Ackerman method "Suprise" stepping and the Gross Profit Rate</h3>
 
     <p>
         <br> Aggressive Quote -> 135% -> 115% -> 105% -> target
@@ -41,26 +41,26 @@
         var numbers1 = [1.35, 1.15, 1.05, 1.00];
         var numbers2 = [1.21, 1.09, 1.03, 1.00];
 
-        function aq(num) {
+        function AggressivePrice(num) {
             return (num * document.getElementById("targetPrice").value).toFixed(2);
         }
-        function mq(num) {
+        function mildPrice(num) {
             return (num * document.getElementById("targetPrice").value).toFixed(2);
         }
-        function aqg(num, bom) {
+        function AggressivePriceGpr(num, bom) {
             return (((num * document.getElementById("targetPrice").value) - document.getElementById("bom").value) / (num * document.getElementById("targetPrice").value)).toFixed(2);
         }
-        function mqg(num, bom) {
+        function mildPriceGpr(num, bom) {
             return (((num * document.getElementById("targetPrice").value) - document.getElementById("bom").value) / (num * document.getElementById("targetPrice").value)).toFixed(2);
         }
 
 
 
         function myFunction() {
-            document.getElementById("demo").innerHTML = numbers1.map(aq);
-            document.getElementById("demo3").innerHTML = numbers1.map(aqg);
-            document.getElementById("demo2").innerHTML = numbers2.map(mq);
-            document.getElementById("demo4").innerHTML = numbers2.map(mqg);
+            document.getElementById("demo").innerHTML = numbers1.map(AggressivePrice);
+            document.getElementById("demo3").innerHTML = numbers1.map(AggressivePriceGpr);
+            document.getElementById("demo2").innerHTML = numbers2.map(mildPrice);
+            document.getElementById("demo4").innerHTML = numbers2.map(mildPriceGpr);
 
         }
     </script>
