@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h3>Fill in Target price and BOM
+        <br> ->
+        <br> Akerman Quotation stepping and the Gross Profit Rate</h3>
+
+    <p>
+        <br> Aggressive Quote -> 135% -> 115% -> 105% -> target
+        <br>
+        <br> Mild Quote -> 121% -> 109% -> 103% -> target
+
+    </p>
+    <br>
+    <p>Target Price:
+        <input type="number" id="targetPrice" value="10">
+    </p>
+    <p>BOM:
+        <input type="number" id="bom" value="7">
+    </p>
+
+    <button onclick="myFunction()">Check</button>
+
+    <p>Aggressive Quote:
+        <span id="demo"></span>
+    </p>
+    <p>Aggressive Quote GPR:
+        <span id="demo3"></span>
+    </p>
+    <br>
+    <p>Mild Quote:
+        <span id="demo2"></span>
+    </p>
+    <p>Mild Quote GPR:
+        <span id="demo4"></span>
+    </p>
+
+    <script>
+        var numbers1 = [1.35, 1.15, 1.05, 1.00];
+        var numbers2 = [1.21, 1.09, 1.03, 1.00];
+
+        function aq(num) {
+            return (num * document.getElementById("targetPrice").value).toFixed(2);
+        }
+        function mq(num) {
+            return (num * document.getElementById("targetPrice").value).toFixed(2);
+        }
+        function aqg(num, bom) {
+            return (((num * document.getElementById("targetPrice").value) - document.getElementById("bom").value) / (num * document.getElementById("targetPrice").value)).toFixed(2);
+        }
+        function mqg(num, bom) {
+            return (((num * document.getElementById("targetPrice").value) - document.getElementById("bom").value) / (num * document.getElementById("targetPrice").value)).toFixed(2);
+        }
+
+
+
+        function myFunction() {
+            document.getElementById("demo").innerHTML = numbers1.map(aq);
+            document.getElementById("demo3").innerHTML = numbers1.map(aqg);
+            document.getElementById("demo2").innerHTML = numbers2.map(mq);
+            document.getElementById("demo4").innerHTML = numbers2.map(mqg);
+
+        }
+    </script>
+
+</body>
+
+</html>
