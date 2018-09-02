@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <!-- external JS link -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+    
+    <script type="text/javascript">
+
+    // load googal chart package
+        google.charts.load('current', { 'packages': ['gantt'] });
+
+    // 下面會def what this drawChart fuction的內容，然後這邊會放入setOnLoadCallback這個predefined這個函數/method/property去跑
+        google.charts.setOnLoadCallback(drawChart);
+
+    // set set a function to make day as unit, from millionseceond default for "Duration" 
+        function daysToMilliseconds(days) {
+            return days * 24 * 60 * 60 * 1000;
+        }
+
+    //  
+        function drawChart() {
+
+            //透過google.視覺化,表單method建立一個instance, store 為data變數
+
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Task ID');
+            data.addColumn('string', 'Task Name');
+            data.addColumn('date', 'Start Date');
+            data.addColumn('date', 'End Date');
+            data.addColumn('number', 'Duration');
+            data.addColumn('number', 'Percent Complete');
+            data.addColumn('string', 'Dependencies');
+
+            //使用.addRows這個辦法，去建立去gantt 圖
+
+            data.addRows([
+                ['contract', '簽約',
+                    new Date(2018,8,14), null, daysToMilliseconds(1), 0, null],
+                ['wood', '木工進場',
+                    null, null, daysToMilliseconds(50), 0, 'contract'],
+                ['paint', '油漆進場',
+                    null, null, daysToMilliseconds(40), 0, 'wood'],
+                ['clean', '清潔完成',
+                    null, null, daysToMilliseconds(10), 0, 'paint'],
+                ['deliver', '交屋',
+                    null, null, daysToMilliseconds(1), 0, 'clean']
+            ]);
+            
+            //定義整個畫面的高，不過如果設定很大超過本身的圖型，會擠壓到其他文字，只有顯示本身看不出改變
+
+            var options = {
+                width: 800,
+                height: 275
+                
+            };
+            
+            // get DOM element from html and apply Google.視覺化.Gantt這個method
+            //最後建立出一個instance, 然後store一個變數 chart，等等下面會跑
+
+            var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
+            
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+<style>
+    h1{
+        color:blue;
+        font-size: 17px;
+        
+    }
+    span {
+        font-size:15px;
+        color:royalblue;
+    }
+</style>
+
+<body>
+    <br>
+    <h1>
+        工程約時間表與驗收點 <br> 
+        <span>預估: 預計2019年一月交屋</span>
+    </h1><br><br>
+    <div id="chart_div"></div>
+</body>
+
+</html>
