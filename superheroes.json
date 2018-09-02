@@ -1,0 +1,39 @@
+{
+  "squadName" : "英雄小組",
+  "homeTown" : "台北",
+  "formed" : 2018,
+  "secretBase" : "日安",
+  "active" : true,
+  "members" : [
+    {
+      "name" : "小偉",
+      "age" : 3700,
+      "secretIdentity" : "業務",
+      "powers" : [
+        "價值觀建構",
+        "談判技術",
+        "秩序建立"
+      ]
+    },
+    {
+      "name" : "小蓁",
+      "age" : 3700,
+      "secretIdentity" : "藝術計畫人員",
+      "powers" : [
+        "魔法氣息",
+        "人際維護",
+        "甜食征服"
+      ]
+    },
+    {
+      "name" : "小云",
+      "age" : 3500,
+      "secretIdentity" : "幼教老師",
+      "powers" : [
+        "圓夢機",
+        "驚奇人師",
+        "人生建構"
+      ]
+    }
+  ]
+}
