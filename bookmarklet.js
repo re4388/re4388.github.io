@@ -4,11 +4,8 @@
 
   for (let i = 0; i < para.length; i++) {
     const element = para[i];
-    element.style.color = 'blue'
-    element.style.fontFamily = "Arial";
-    element.style.fontSize = "larger";
-    
-    
+    element.style['background-color'] = '#F0C'
+  
 
   }
 })();
