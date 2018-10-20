@@ -4,6 +4,6 @@
 
   for (let i = 0; i < para.length; i++) {
     const element = para[i];
-    element.innerHTML="Sabrina" 
+    element.style.color = 'red'
   }
 })();
