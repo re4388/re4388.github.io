@@ -1,10 +1,10 @@
 (function () {
   console.log("It started");
-  let para = document.getElementsByTagName("p");
+  let li = document.getElementsByTagName("li");
 
-  for (let i = 0; i < para.length; i++) {
-    const element = para[i];
-    element.style['background-color'] = '#F0C'
+  for (let i = 0; i < li.length; i++) {
+    const element = li[i];
+    element.style['background-color'] = '#4b8cff'
   
 
   }
