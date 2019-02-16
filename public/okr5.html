@@ -1,0 +1,1134 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width = device-width, initial-scale = 1, maximum-scale = 1">
+  <style id="style">
+    @font-face {
+      font-family: 'Lato';
+      src: url('file:///Applications/Boostnote.app/Contents/Resources/app/resources/fonts/Lato-Regular.woff2') format('woff2'),
+        /* Modern Browsers */
+        url('file:///Applications/Boostnote.app/Contents/Resources/app/resources/fonts/Lato-Regular.woff') format('woff'),
+        /* Modern Browsers */
+        url('file:///Applications/Boostnote.app/Contents/Resources/app/resources/fonts/Lato-Regular.ttf') format('truetype');
+      font-style: normal;
+      font-weight: normal;
+      text-rendering: optimizeLegibility;
+    }
+
+    @font-face {
+      font-family: 'Lato';
+      src: url('file:///Applications/Boostnote.app/Contents/Resources/app/resources/fonts/Lato-Black.woff2') format('woff2'),
+        /* Modern Browsers */
+        url('file:///Applications/Boostnote.app/Contents/Resources/app/resources/fonts/Lato-Black.woff') format('woff'),
+        /* Modern Browsers */
+        url('file:///Applications/Boostnote.app/Contents/Resources/app/resources/fonts/Lato-Black.ttf') format('truetype');
+      font-style: normal;
+      font-weight: 700;
+      text-rendering: optimizeLegibility;
+    }
+
+    @font-face {
+      font-family: 'Material Icons';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Material Icons'),
+        local('MaterialIcons-Regular'),
+        url('file:///Applications/Boostnote.app/Contents/Resources/app/resources/fonts/MaterialIcons-Regular.woff2') format('woff2'),
+        url('file:///Applications/Boostnote.app/Contents/Resources/app/resources/fonts/MaterialIcons-Regular.woff') format('woff'),
+        url('file:///Applications/Boostnote.app/Contents/Resources/app/resources/fonts/MaterialIcons-Regular.ttf') format('truetype');
+    }
+
+    html,
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      outline: 0;
+      font-weight: inherit;
+      font-style: inherit;
+      font-family: inherit;
+      font-size: 100%;
+      vertical-align: baseline;
+    }
+
+    body {
+      line-height: 1;
+      color: #000;
+      background: #fff;
+    }
+
+    ol,
+    ul {
+      list-style: none;
+    }
+
+    table {
+      border-collapse: separate;
+      border-spacing: 0;
+      vertical-align: middle;
+    }
+
+    caption,
+    th,
+    td {
+      text-align: left;
+      font-weight: normal;
+      vertical-align: middle;
+    }
+
+    a img {
+      border: none;
+    }
+
+    body {
+      font-size: 16px;
+      padding: 15px;
+      font-family: helvetica, arial, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-color: #fff;
+    }
+
+    body .katex {
+      font: 400 1.2em 'KaTeX_Main';
+      line-height: 1.2em;
+      white-space: initial;
+      text-indent: 0;
+    }
+
+    body .katex .mfrac>.vlist>span:nth-child(2) {
+      top: 0 !important;
+    }
+
+    body .katex-error {
+      background-color: #f2dede;
+      color: #a64444;
+      padding: 5px;
+      margin: -5px;
+      border-radius: 5px;
+    }
+
+    body .flowchart-error,
+    body .sequence-error .chart-error {
+      background-color: #f2dede;
+      color: #a64444;
+      padding: 5px;
+      border-radius: 5px;
+      -webkit-box-pack: left;
+      -moz-box-pack: left;
+      -o-box-pack: left;
+      -ms-flex-pack: left;
+      -webkit-justify-content: left;
+      justify-content: left;
+    }
+
+    li label.taskListItem {
+      margin-left: -1.8em;
+    }
+
+    li label.taskListItem.checked {
+      text-decoration: line-through;
+      opacity: 0.5;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+      filter: alpha(opacity=50);
+    }
+
+    div.math-rendered {
+      text-align: center;
+    }
+
+    .math-failed {
+      background-color: rgba(255, 0, 0, 0.1);
+      color: #d90000;
+      padding: 5px;
+      margin: 5px 0;
+      border-radius: 5px;
+    }
+
+    sup {
+      position: relative;
+      top: -0.4em;
+      font-size: 0.8em;
+      vertical-align: top;
+    }
+
+    sub {
+      position: relative;
+      bottom: -0.4em;
+      font-size: 0.8em;
+      vertical-align: top;
+    }
+
+    a {
+      color: #2bac8f;
+      text-decoration: none;
+      padding: 5px;
+      border-radius: 5px;
+      margin: -5px;
+      -webkit-transition: 0.1s;
+      -moz-transition: 0.1s;
+      -o-transition: 0.1s;
+      -ms-transition: 0.1s;
+      transition: 0.1s;
+    }
+
+    a img {
+      vertical-align: sub;
+    }
+
+    a:hover {
+      color: #2eb899;
+      text-decoration: underline;
+      background-color: rgba(255, 201, 92, 0.3);
+    }
+
+    a:visited {
+      color: #2bac8f;
+    }
+
+    hr {
+      border-top: none;
+      border-bottom: solid 1px #d0d0d0;
+      margin: 15px 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: bold;
+      word-wrap: break-word;
+    }
+
+    h1 {
+      font-size: 2.55em;
+      padding-bottom: 0.3em;
+      line-height: 1.2em;
+      border-bottom: solid 1px #d0d0d0;
+      margin: 1em 0 0.44em;
+    }
+
+    h1:first-child {
+      margin-top: 0;
+    }
+
+    h2 {
+      font-size: 1.75em;
+      padding-bottom: 0.3em;
+      line-height: 1.225em;
+      border-bottom: solid 1px #d0d0d0;
+      margin: 1em 0 0.57em;
+    }
+
+    h2:first-child {
+      margin-top: 0;
+    }
+
+    h3 {
+      font-size: 1.5em;
+      line-height: 1.43em;
+      margin: 1em 0 0.66em;
+    }
+
+    h4 {
+      font-size: 1.25em;
+      line-height: 1.4em;
+      margin: 1em 0 0.8em;
+    }
+
+    h5 {
+      font-size: 1em;
+      line-height: 1.4em;
+      margin: 1em 0 1em;
+    }
+
+    h6 {
+      font-size: 1em;
+      line-height: 1.4em;
+      margin: 1em 0 1em;
+      color: #777;
+    }
+
+    p {
+      line-height: 1.6em;
+      margin: 0 0 1em;
+      white-space: pre-line;
+      word-wrap: break-word;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    strong,
+    b {
+      font-weight: bold;
+    }
+
+    em,
+    i {
+      font-style: italic;
+    }
+
+    s,
+    del,
+    strike {
+      text-decoration: line-through;
+    }
+
+    u {
+      text-decoration: underline;
+    }
+
+    blockquote {
+      border-left: solid 4px #3fb399;
+      margin: 0 0 1em;
+      padding: 0 25px;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 2em;
+      margin-bottom: 1em;
+    }
+
+    ul li {
+      display: list-item;
+    }
+
+    ul li.taskListItem {
+      list-style: none;
+    }
+
+    ul li p {
+      margin: 0;
+    }
+
+    ul>li>ul,
+    ul>li>ol {
+      margin: 0;
+    }
+
+    ul>li>ul {
+      list-style-type: circle;
+    }
+
+    ul>li>ul>li>ul {
+      list-style-type: square;
+    }
+
+    ol {
+      list-style-type: decimal;
+      padding-left: 2em;
+      margin-bottom: 1em;
+    }
+
+    ol li {
+      display: list-item;
+    }
+
+    ol li p {
+      margin: 0;
+    }
+
+    ol>li>ul,
+    ol>li>ol {
+      margin: 0;
+    }
+
+    code {
+      padding: 0.2em 0.4em;
+      background-color: #f7f7f7;
+      border-radius: 3px;
+      font-size: 1em;
+      text-decoration: none;
+      margin-right: 2px;
+    }
+
+    pre {
+      padding: 0.5em !important;
+      border: solid 1px #d1d1d1;
+      border-radius: 5px;
+      overflow-x: auto;
+      margin: 0 0 1em;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: box;
+      display: flex;
+      line-height: 1.4em;
+    }
+
+    pre.flowchart,
+    pre.sequence,
+    pre.chart {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: box;
+      display: flex;
+      -webkit-box-pack: center;
+      -moz-box-pack: center;
+      -o-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      background-color: #fff;
+    }
+
+    pre.CodeMirror {
+      height: initial;
+      -webkit-box-lines: multiple;
+      -moz-box-lines: multiple;
+      -o-box-lines: multiple;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+    }
+
+    pre.CodeMirror>code {
+      -webkit-box-flex: 1;
+      -moz-box-flex: 1;
+      -o-box-flex: 1;
+      box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      overflow-x: auto;
+    }
+
+    pre code {
+      background-color: inherit;
+      margin: 0;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+    }
+
+    pre>span.filename {
+      width: 100%;
+      border-radius: 5px 0px 0px 0px;
+      margin: -8px 100% 8px -8px;
+      padding: 0px 6px;
+      background-color: #777;
+      color: #fff;
+    }
+
+    pre>span.lineNumber {
+      display: none;
+      font-size: 1em;
+      padding: 0.5em 0;
+      margin: -0.5em 0.5em -0.5em -0.5em;
+      border-right: 1px solid;
+      text-align: right;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+
+    pre>span.lineNumber.CodeMirror-gutters {
+      position: initial;
+      top: initial;
+      left: initial;
+      min-height: 0 !important;
+    }
+
+    pre>span.lineNumber>span {
+      display: block;
+      padding: 0 0.5em 0;
+    }
+
+    table {
+      display: block;
+      width: 100%;
+      margin: 0 0 1em;
+    }
+
+    table thead tr {
+      background-color: #fff;
+    }
+
+    table thead th {
+      border-style: solid;
+      padding: 6px 13px;
+      line-height: 1.6;
+      border-width: 1px 0 2px 1px;
+      border-color: #d0d0d0;
+      font-weight: bold;
+    }
+
+    table thead th:last-child {
+      border-right: solid 1px #d0d0d0;
+    }
+
+    table tbody tr:nth-child(2n + 1) {
+      background-color: #f9f9f9;
+    }
+
+    table tbody tr:nth-child(2n) {
+      background-color: #fff;
+    }
+
+    table tbody td {
+      border-style: solid;
+      padding: 6px 13px;
+      line-height: 1.6;
+      border-width: 0 0 1px 1px;
+      border-color: #d0d0d0;
+    }
+
+    table tbody td:last-child {
+      border-right: solid 1px #d0d0d0;
+    }
+
+    kbd {
+      background-color: #fafbfc;
+      border: solid 1px #d0d0d0;
+      border-bottom-color: #888;
+      border-radius: 3px;
+      -webkit-box-shadow: inset 0 -1px 0 #959da5;
+      box-shadow: inset 0 -1px 0 #959da5;
+      display: inline-block;
+      font-size: 0.8em;
+      line-height: 1;
+      padding: 3px 5px;
+    }
+
+    .admonition.note,
+    .admonition.hint,
+    .admonition.danger,
+    .admonition.caution,
+    .admonition.error,
+    .admonition.attention {
+      -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+      position: relative;
+      margin: 1.5625em 0;
+      padding: 0 1.2rem;
+      border-left: 0.4rem solid #448aff;
+      border-radius: 0.2rem;
+      overflow: auto;
+    }
+
+    html .admonition>:last-child {
+      margin-bottom: 1.2rem;
+    }
+
+    .admonition .admonition {
+      margin: 1em 0;
+    }
+
+    .admonition p {
+      margin-top: 0.5em;
+    }
+
+    .admonition.note>.admonition-title:before,
+    .admonition.hint>.admonition-title:before,
+    .admonition.danger>.admonition-title:before,
+    .admonition.caution>.admonition-title:before,
+    .admonition.error>.admonition-title:before,
+    .admonition.attention>.admonition-title:before {
+      position: absolute;
+      left: 1.2rem;
+      font-family: "Material Icons";
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+      /* Support for all WebKit browsers. */
+      -webkit-font-smoothing: antialiased;
+      /* Support for Safari and Chrome. */
+      text-rendering: optimizeLegibility;
+      /* Support for Firefox. */
+      -moz-osx-font-smoothing: grayscale;
+      /* Support for IE. */
+      font-feature-settings: 'liga';
+    }
+
+    .admonition.note>.admonition-title,
+    .admonition.hint>.admonition-title,
+    .admonition.danger>.admonition-title,
+    .admonition.caution>.admonition-title,
+    .admonition.error>.admonition-title,
+    .admonition.attention>.admonition-title {
+      margin: 0 -1.2rem;
+      padding: 0.8rem 1.2rem 0.8rem 4rem;
+      border-bottom: 0.1rem solid rgba(68, 138, 255, 0.1);
+      background-color: rgba(68, 138, 255, 0.1);
+      font-weight: 700;
+    }
+
+    .admonition>.admonition-title:last-child {
+      margin-bottom: 0;
+    }
+
+    .admonition.note {
+      border-left-color: #0288d1;
+    }
+
+    .admonition.note>.admonition-title {
+      border-bottom-color: 0.1rem solid rgba(2, 136, 209, 0.2);
+      background-color: rgba(2, 136, 209, 0.2);
+    }
+
+    .admonition.note>.admonition-title:before {
+      color: #0288d1;
+      content: "note";
+    }
+
+    .admonition.hint {
+      border-left-color: #009688;
+    }
+
+    .admonition.hint>.admonition-title {
+      border-bottom-color: 0.1rem solid rgba(0, 150, 136, 0.2);
+      background-color: rgba(0, 150, 136, 0.2);
+    }
+
+    .admonition.hint>.admonition-title:before {
+      color: #009688;
+      content: "info_outline";
+    }
+
+    .admonition.danger {
+      border-left-color: #c2185b;
+    }
+
+    .admonition.danger>.admonition-title {
+      border-bottom-color: 0.1rem solid rgba(194, 24, 91, 0.2);
+      background-color: rgba(194, 24, 91, 0.2);
+    }
+
+    .admonition.danger>.admonition-title:before {
+      color: #c2185b;
+      content: "block";
+    }
+
+    .admonition.caution {
+      border-left-color: #ffa726;
+    }
+
+    .admonition.caution>.admonition-title {
+      border-bottom-color: 0.1rem solid rgba(255, 167, 38, 0.2);
+      background-color: rgba(255, 167, 38, 0.2);
+    }
+
+    .admonition.caution>.admonition-title:before {
+      color: #ffa726;
+      content: "warning";
+    }
+
+    .admonition.error {
+      border-left-color: #d32f2f;
+    }
+
+    .admonition.error>.admonition-title {
+      border-bottom-color: 0.1rem solid rgba(211, 47, 47, 0.2);
+      background-color: rgba(211, 47, 47, 0.2);
+    }
+
+    .admonition.error>.admonition-title:before {
+      color: #d32f2f;
+      content: "error_outline";
+    }
+
+    .admonition.attention {
+      border-left-color: #455a64;
+    }
+
+    .admonition.attention>.admonition-title {
+      border-bottom-color: 0.1rem solid rgba(69, 90, 100, 0.2);
+      background-color: rgba(69, 90, 100, 0.2);
+    }
+
+    .admonition.attention>.admonition-title:before {
+      color: #455a64;
+      content: "priority_high";
+    }
+
+    body[data-theme="dark"] {
+      color: #f9f9f9;
+      border-color: #444b59;
+      background-color: #2c3033;
+    }
+
+    body[data-theme="dark"] a:hover {
+      background-color: rgba(90, 214, 186, 0.2) !important;
+    }
+
+    body[data-theme="dark"] code {
+      color: #ea6730;
+      border-color: #3d4450;
+      background-color: #363a3e;
+    }
+
+    body[data-theme="dark"] pre {
+      border-color: #474f5c;
+    }
+
+    body[data-theme="dark"] pre code {
+      background-color: transparent;
+    }
+
+    body[data-theme="dark"] label.taskListItem {
+      background-color: #2c3033;
+    }
+
+    body[data-theme="dark"] table thead tr {
+      background-color: #282b2e;
+    }
+
+    body[data-theme="dark"] table thead th {
+      border-color: #444b59;
+    }
+
+    body[data-theme="dark"] table thead th:last-child {
+      border-right: solid 1px #444b59;
+    }
+
+    body[data-theme="dark"] table tbody tr:nth-child(2n + 1) {
+      background-color: #2c3033;
+    }
+
+    body[data-theme="dark"] table tbody tr:nth-child(2n) {
+      background-color: #282b2e;
+    }
+
+    body[data-theme="dark"] table tbody td {
+      border-color: #444b59;
+    }
+
+    body[data-theme="dark"] table tbody td:last-child {
+      border-right: solid 1px #444b59;
+    }
+
+    body[data-theme="dark"] kbd {
+      background-color: #444b59;
+      color: #f9f9f9;
+    }
+
+    body[data-theme="solarized-dark"] {
+      color: #93a1a1;
+      border-color: #444b59;
+      background-color: #073642;
+    }
+
+    body[data-theme="solarized-dark"] table thead tr {
+      background-color: #06313b;
+    }
+
+    body[data-theme="solarized-dark"] table thead th {
+      border-color: #444b59;
+    }
+
+    body[data-theme="solarized-dark"] table thead th:last-child {
+      border-right: solid 1px #444b59;
+    }
+
+    body[data-theme="solarized-dark"] table tbody tr:nth-child(2n + 1) {
+      background-color: #073642;
+    }
+
+    body[data-theme="solarized-dark"] table tbody tr:nth-child(2n) {
+      background-color: #06313b;
+    }
+
+    body[data-theme="solarized-dark"] table tbody td {
+      border-color: #444b59;
+    }
+
+    body[data-theme="solarized-dark"] table tbody td:last-child {
+      border-right: solid 1px #444b59;
+    }
+
+    body[data-theme="monokai"] {
+      color: #f8f8f2;
+      border-color: #444b59;
+      background-color: #272822;
+    }
+
+    body[data-theme="monokai"] table thead tr {
+      background-color: #23241f;
+    }
+
+    body[data-theme="monokai"] table thead th {
+      border-color: #444b59;
+    }
+
+    body[data-theme="monokai"] table thead th:last-child {
+      border-right: solid 1px #444b59;
+    }
+
+    body[data-theme="monokai"] table tbody tr:nth-child(2n + 1) {
+      background-color: #272822;
+    }
+
+    body[data-theme="monokai"] table tbody tr:nth-child(2n) {
+      background-color: #23241f;
+    }
+
+    body[data-theme="monokai"] table tbody td {
+      border-color: #444b59;
+    }
+
+    body[data-theme="monokai"] table tbody td:last-child {
+      border-right: solid 1px #444b59;
+    }
+
+    body[data-theme="monokai"] kbd {
+      background-color: #1e2127;
+    }
+
+    /*# sourceMappingURL=browser/components/markdown.css.map */
+
+    body {
+      font-family: 'Lato', 'helvetica', 'arial', 'sans-serif';
+      font-size: 14px;
+      false
+    }
+
+    code {
+      font-family: 'Monaco', 'Consolas', 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', 'monospace';
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+
+    .lineNumber {
+      display: block !important;
+      font-family: 'Monaco', 'Consolas', 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', 'monospace';
+    }
+
+    .clipboardButton {
+      color: rgba(147, 147, 149, 0.8);
+      ;
+      fill: rgba(147, 147, 149, 1);
+      ;
+      border-radius: 50%;
+      margin: 0px 10px;
+      border: none;
+      background-color: transparent;
+      outline: none;
+      height: 15px;
+      width: 15px;
+      cursor: pointer;
+    }
+
+    .clipboardButton:hover {
+      transition: 0.2s;
+      color: #939395;
+      fill: #939395;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    h1,
+    h2 {
+      border: none;
+    }
+
+    h1 {
+      padding-bottom: 4px;
+      margin: 1em 0 8px;
+    }
+
+    h2 {
+      padding-bottom: 0.2em;
+      margin: 1em 0 0.37em;
+    }
+
+    body p {
+      white-space: normal;
+    }
+
+    @media print {
+      body[data-theme="default"] {
+        color: #000;
+        background-color: #fff;
+        < !-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-133681512-1"></script><script>window.dataLayer=window.dataLayer || [];
+
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-133681512-1');
+        </script>
+      }
+
+      .clipboardButton {
+        display: none
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="css/elegant.css">
+  <link rel="stylesheet" href="css/katex.min.css">
+  <link rel="stylesheet" href="css/codemirror.css">
+
+
+
+
+
+
+</head>
+
+<body>
+  <h2 data-line="0" id="What-is-OKR">What is OKR?</h2>
+  <hr />
+  <p data-line="2">Fri, Sep 21 v1</p>
+  <h3 data-line="5" id="OKR%E7%B8%AE%E5%AF%AB%EF%BC%9F">OKR縮寫？</h3>
+  <p data-line="7">Objectives<br />
+    Key Results</p>
+  <p data-line="10">目標與關鍵結果</p>
+  <p data-line="16">OKR是一套严密的<strong>思考框架</strong>和<strong>持续的纪律</strong>要求，<br />
+    旨在确保员工紧密协作，把精力<strong>聚焦</strong><br />
+    在能<strong>促进组织成长</strong>的、<br />
+    <strong>可衡量</strong>的贡献上</p>
+  <ol>
+    <li>明確主要目標</li>
+    <li>大家對輕重緩急有數</li>
+    <li>明白清楚進度</li>
+    <li>讓員工可以互相協調</li>
+  </ol>
+  <h3 data-line="28" id="%E9%A0%90%E6%9C%9F%E7%B5%90%E6%9E%9C%EF%BC%9F">預期結果？</h3>
+  <p data-line="30"><img src="https://pic3.zhimg.com/80/c8547b6beaea2e35620fe9c404947616_hd.jpg" alt="c8547b6beaea2e35620fe9c404947616_hd.jpg" /></p>
+  <p data-line="32"><strong>就是 Align Prioritization of all的流程</strong></p>
+  <h3 data-line="37" id="%E4%BD%BF%E7%94%A8%E5%89%8D%E8%A6%81%E9%87%90%E6%B8%85%E7%9A%84%E5%95%8F%E9%A1%8C">使用前要釐清的問題</h3>
+  <ol>
+    <li>為何要實施？<br />
+      因為流行所以用？</li>
+  </ol>
+  <p data-line="42">（為了focus, allignment and priority reallignement）</p>
+  <ol start="2">
+    <li>哪個層面要用？<br />
+      個人層級？單位層級？還是公司層級？</li>
+  </ol>
+  <ol start="3">
+    <li>週期？<br />
+      季？月？</li>
+  </ol>
+  <ol start="4">
+    <li>大家對OKR的認識<br />
+      大家要做功課<br />
+      主導者也要對大家說明上面的why</li>
+  </ol>
+  <h3 data-line="58" id="%E5%A6%82%E4%BD%95%E5%AE%9AO">如何定O</h3>
+  <p data-line="60">SMART</p>
+  <ul>
+    <li>明確</li>
+    <li>量化</li>
+    <li>可達到</li>
+    <li>有相關</li>
+    <li>有時限</li>
+  </ul>
+  <p data-line="69">要具有挑戰度<br />
+    要有足夠野心</p>
+  <h3 data-line="72" id="%E5%A6%82%E4%BD%95%E5%AE%9AKR">如何定KR</h3>
+  <p data-line="74">量化</p>
+  <p data-line="77">不能說我要建立一個更好的網站</p>
+  <p data-line="79">要說，我的網站訪客率提高10%</p>
+  <p data-line="81">（KR建議4-5個，不要太多無法focus）</p>
+  <h3 data-line="84" id="KR%E8%A9%95%E5%88%86">KR評分</h3>
+  <p data-line="86">季末打分<br />
+    範圍0-1</p>
+  <p data-line="89">認可的結果是0.6-0.7,<br />
+    1表示設定太簡單</p>
+  <p data-line="92">公開結果但不能連接獎懲</p>
+  <h3 data-line="95" id="%E6%B5%81%E7%A8%8B">流程</h3>
+  <ol>
+    <li>由下到上建立</li>
+    <li>上下溝通討論，修正內容</li>
+    <li>上下達到共識</li>
+    <li>定案</li>
+    <li>公布</li>
+  </ol>
+  <h3 data-line="103" id="%E5%AE%9A%E6%9C%9F%E6%AA%A2%E8%A6%96">定期檢視</h3>
+  <p data-line="105">週報<br />
+    季度中期<br />
+    季度結束<br />
+    <img src="https://pic1.zhimg.com/80/985f7b3781a2453330980051c4f295ac_hd.jpg" alt="985f7b3781a2453330980051c4f295ac_hd.jpg" /></p>
+  <p data-line="111">年度計畫範例<br />
+    <img src="https://pic3.zhimg.com/80/12660b7491fbfb2f00ba6da13a086ee2_hd.jpg" alt="12660b7491fbfb2f00ba6da13a086ee2_hd.jpg" /></p>
+  <h3 data-line="115" id="%E6%BA%9D%E9%80%9A%E5%B7%A5%E5%85%B7">溝通工具</h3>
+  <p data-line="117">白板<br />
+    google Sheet<br />
+    專業okr軟體：Worklite</p>
+  <h3 data-line="122" id="%E5%8F%A6%E4%B8%80%E5%80%8B%E8%A7%92%E5%BA%A6">另一個角度</h3>
+  <p data-line="124"><img src="https://pic2.zhimg.com/80/v2-74eededc8ca03e678c5a5405dcf8e505_hd.png" alt="v2-74eededc8ca03e678c5a5405dcf8e505_hd.png" /></p>
+  <h3 data-line="127" id="%E4%BE%8B%E5%AD%901">例子1</h3>
+  <p data-line="129">目標:<br />
+    建立一個可運作的目標量測模型</p>
+  <p data-line="133">關鍵結果</p>
+  <ul>
+    <li>在時限內完成展示報告</li>
+    <li>完成此模型的幾個樣本例子（目標和關鍵結果）</li>
+    <li>讓管理層同意試跑三個月</li>
+  </ul>
+  <h3 data-line="140" id="%E4%BE%8B%E5%AD%902">例子2</h3>
+  <p data-line="142">uber</p>
+  <p data-line="145"><img src="https://pic2.zhimg.com/80/v2-11c279fdc26324b372f83b92fe1bed05_hd.jpg" alt="v2-11c279fdc26324b372f83b92fe1bed05_hd.jpg" /></p>
+  <p data-line="147">目標：招募更多司機</p>
+  <p data-line="149">關鍵結果</p>
+  <ul>
+    <li>所有地區的司機基數提高20%</li>
+    <li>所有活躍地區的司機的平均工作時數提高到每週90小時</li>
+  </ul>
+  <p data-line="154">目标：提升地区覆盖</p>
+  <ul>
+    <li>上海的覆盖率提升至100%</li>
+    <li>所有活跃城市的覆盖率提升至75%</li>
+    <li>交通高峰期，所有覆盖地区的每次接客时间将至10分钟以下</li>
+  </ul>
+  <p data-line="160">目标：提升司机满意度</p>
+  <ul>
+    <li>
+      <p data-line="162">定义并评估司机的满意指数</p>
+    </li>
+    <li>
+      <p data-line="164">提升此指数到75%以上</p>
+    </li>
+  </ul>
+  <h3 data-line="166" id="%E4%BE%8B%E5%AD%903">例子3</h3>
+  <p data-line="168">Youtube<br />
+    目标是提升用户使用Google产品的总时间</p>
+  <p data-line="171">和Facebook类似，YouTube同样也想要流量，每分钟为单位计量的流量。在所有流量中，广告流量的占比是固定的，越高的总流量就意味着更高的收入</p>
+  <p data-line="174">Objective：提升每位用户的平均观看时间</p>
+  <ul>
+    <li>提升每天XX分钟的观看时间</li>
+    <li>推出两个新的操作系统的YouTube客户端</li>
+    <li>降低X%的视频加载时间</li>
+  </ul>
+  <h3 data-line="179" id="%E5%85%AC%E5%8F%B8%E4%BE%8B%E5%AD%90%EF%BC%8C%E4%BB%A5%E6%88%91%E7%82%BA%E4%BE%8B">公司例子，以我為例</h3>
+  <p data-line="181">業務主管的目標，<br />
+    自然是提高業務部業績</p>
+  <p data-line="184">業務部業績，除了業務主管本身負責的客戶，<br />
+    也包括管理部門業績，</p>
+  <p data-line="187">為了可以提高業務部門的整體績效</p>
+  <p data-line="189">一個簡單的邏輯圖可以如下：<br />
+    <img src="https://preview.ibb.co/dcNysK/ACT_goal.jpg" alt="ACT_goal.jpg" /><br />
+    因此，<br />
+    可以展出以下四個目標</p>
+  <p data-line="194">季目標（3個月）</p>
+  <p data-line="196">目標1: 提高人員核心能力<br />
+    目標2: 讓員工與公司目標的優先順位清楚與排序盡力一致<br />
+    目標3: 提高個人專案進展率<br />
+    目標4: 提高團隊專案進展率</p>
+  <p data-line="202">目標1: 提高人員核心能力<br />
+    關鍵結果</p>
+  <ul>
+    <li>1 vs 1 訂出個人能力提升清單, one page list</li>
+    <li>持續trial run 讀書會</li>
+  </ul>
+  <p data-line="208">目標2: 讓員工與公司目標的優先順位清楚與排序一致<br />
+    關鍵結果</p>
+  <ul>
+    <li>制定目標管理流程</li>
+    <li>試跑目標管理流程</li>
+  </ul>
+  <p data-line="214">(制定績效考核制度，下一季）</p>
+  <p data-line="218">目標3: 提高個人專案進展率<br />
+    關鍵結果</p>
+  <ul>
+    <li>品X兩個案子進入量產階段和debug量產問題</li>
+    <li>HXN 進入量產階段和debug量產問題</li>
+    <li>自X電X進入量產階段和debug量產問題<br />
+      …</li>
+  </ul>
+  <p data-line="225">（進入量產階段以客戶共識為主）</p>
+  <p data-line="227">目標4: 提高團隊專案進展率<br />
+    關鍵結果</p>
+  <ul>
+    <li>每週定期review，並向上層報告<br />
+      …</li>
+  </ul>
+  <p data-line="233">（以上只是初步設計，<br />
+    還需要be more specific and be more accurate）</p>
+  <hr />
+  <h3 data-line="241" id="%E5%85%B6%E4%BB%96%E6%9C%89%E8%B6%A3%E7%9A%84%E2%80%A6">其他有趣的…</h3>
+  <h6 data-line="243" id="Google-Promotion%E5%88%B6%E5%BA%A6">Google Promotion制度</h6>
+  <p data-line="246">OKR是[績效考核]的起點。<br />
+    Google每兩年進行績效考核,叫做 Focal review</p>
+  <h6 data-line="250" id="%E7%AD%89%E7%B4%9A%E5%8A%83%E5%88%86">等級劃分</h6>
+  <p data-line="252">full time 最低是level 3 (以下level簡稱L)<br />
+    本科生，研究生畢業，就是L3<br />
+    博士畢業是L4</p>
+  <p data-line="256">公司預期你一定要往上走，<br />
+    不然就會被fire<br />
+    而走到L5, 被cut的機會就很小</p>
+  <hr />
+  <p data-line="263">L3: 做好公司well-defined的事情</p>
+  <p data-line="265">L4: 可以被trusted，去做事情，senior/supervisor只需要在稍微提點就可以達到上面的預期</p>
+  <p data-line="267">L5: 就是senior, 可被trusted, 可以設計公司重要的案子和複雜的系統。在領導能力上，可以是一個小團隊的lead, 也可以代表帶團隊去和其他的team進行協調工作。</p>
+  <p data-line="269">L6: 做的案子更複雜，而帶的團隊更大，而帶team去進行的方向的不確定性更高。</p>
+  <p data-line="271">L7-L10以上的界線不是那麼清楚，更複雜的管理項目，更多的team, 更多是看經驗。</p>
+  <p data-line="273">升遷：</p>
+  <p data-line="275">L3-&gt;L5, 更多是硬實力的提升。硬實力就是problem solving, analytics, coding等。</p>
+  <p data-line="277">L5-&gt;L7以上，更多是軟實力，還包括了有拿到多少的trust, 多少人會聽你的意見。</p>
+  <h6 data-line="281" id="%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99%EF%BC%9A">參考資料：</h6>
+  <p data-line="282"><a href="https://www.zhihu.com/question/22471467">谷歌内部考核制度 OKR 是怎样的？ - 知乎</a></p>
+</body>
+
+</html>

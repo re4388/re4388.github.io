@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133681512-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-133681512-1');
+</script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <style>
+        div{
+    margin: 20px;
+}
+</style>
+</head>
+
+
+<body>
+    <div>
+        <h1>Ackerman method</h1>
+    </div>
+
+    <div>
+        <h2>To give you a quick check for each step quote</h2>
+        <p>Note:
+            You shall formulate your strategy first, to decide your Target price in advace,
+            this calculation is only meant to give you a quick check
+        </p>
+    </div>
+
+    <div>
+        <h4> Aggressive Step </h4>
+        <p>Quote -> 135% -> 115% -> 105% -> target</p>
+        <h4> Moderate Step </h4>
+        <p> Quote -> 121% -> 109% -> 103% -> target</p>
+    </div>
+
+    <div>
+        <p>Input your number below</p>
+
+        <p>Target Price:
+            <input type="number" id="targetPrice" value="10">
+        </p>
+        <p>BOM:
+            <input type="number" id="bom" value="7">
+        </p>
+
+        <button onclick="myFunction()">Submit</button>
+
+    </div>
+
+
+
+
+
+    <div class="panel panel-info">
+        <div class="panel-heading">Aggressive Step</div>
+        <div class="panel-body id=" demo"><span id="demo"></span></div>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">GPR</div>
+        <div class="panel-body id=" demo3"><span id="demo3"></span></div>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">Moderate Step</div>
+        <div class="panel-body id=" demo2"><span id="demo2"></span></div>
+    </div>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">GPR</div>
+        <div class="panel-body id=" demo4"><span id="demo4"></span></div>
+    </div>
+
+
+
+
+
+    <script>
+        var numbers1 = [1.35, 1.15, 1.05, 1.00];
+        var numbers2 = [1.21, 1.09, 1.03, 1.00];
+
+        function AggressivePrice(num) {
+            return (num * document.getElementById("targetPrice").value).toFixed(2);
+        }
+
+        function mildPrice(num) {
+            return (num * document.getElementById("targetPrice").value).toFixed(2);
+        }
+
+        function AggressivePriceGpr(num, bom) {
+            return (((num * document.getElementById("targetPrice").value) - document.getElementById("bom").value) / (
+                num * document.getElementById("targetPrice").value)).toFixed(2);
+        }
+
+        function mildPriceGpr(num, bom) {
+            return (((num * document.getElementById("targetPrice").value) - document.getElementById("bom").value) / (
+                num * document.getElementById("targetPrice").value)).toFixed(2);
+        }
+
+
+
+        function myFunction() {
+            document.getElementById("demo").innerHTML = numbers1.map(AggressivePrice);
+            document.getElementById("demo3").innerHTML = numbers1.map(AggressivePriceGpr);
+            document.getElementById("demo2").innerHTML = numbers2.map(mildPrice);
+            document.getElementById("demo4").innerHTML = numbers2.map(mildPriceGpr);
+
+        }
+    </script>
+
+</body>
+
+</html>
